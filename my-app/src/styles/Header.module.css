@@ -1,0 +1,24 @@
+
+.header {
+    width: 100%;
+    border-bottom: 2px solid white;
+    height: 115px;
+    background-color: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.searchBtn {
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    background-color: #fff;
+    border: none;
+    border-radius: 10px;
+    height: 50px;
+    width: 150px;
+    color: grey;
+    margin-right: 25px;
+    cursor: pointer;
+}

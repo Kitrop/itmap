@@ -1,0 +1,66 @@
+
+.wrapper {
+    align-items: center;
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.buttonList {
+    display: flex;
+    flex-direction: column;
+}
+
+.button {
+    font-size: 18px;
+    width: 350px;
+    border: none;
+    outline: none;
+    height: 50px;
+    cursor: pointer;
+    margin-bottom: 5px;
+}
+
+.button:first-child {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.button:last-child {
+    margin-bottom: 0;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.labor {
+    background-color: #d7ff83;
+}
+.kongress {
+    background-color: #ffb4e1;
+}
+.glavniy {
+    background-color: #ffd4a1;
+}
+.museum {
+    background-color: #b0434a;
+}
+.disit {
+    background-color: #f19e9e;
+}
+.library {
+    background-color: #8ca5ff;
+}
+.ulk {
+    background-color: #fffca9;
+}
+
+.greyBG {
+    background-color: grey;
+}
+
+.text {
+    color: white;
+    font-size: 45px;
+    text-align: center;
+    margin: 0 auto;
+}
