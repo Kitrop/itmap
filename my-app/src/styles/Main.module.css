@@ -9,6 +9,7 @@
 .buttonList {
     display: flex;
     flex-direction: column;
+    padding-left: 5px;
 }
 
 .button {
@@ -34,24 +35,31 @@
 
 .labor {
     background-color: #d7ff83;
+    padding-left: 5px;
 }
 .kongress {
     background-color: #ffb4e1;
+    padding-left: 5px;
 }
 .glavniy {
     background-color: #ffd4a1;
+    padding-left: 5px;
 }
 .museum {
     background-color: #b0434a;
+    padding-left: 5px;
 }
 .disit {
     background-color: #f19e9e;
+    padding-left: 5px;
 }
 .library {
     background-color: #8ca5ff;
+    padding-left: 5px;
 }
 .ulk {
     background-color: #fffca9;
+    padding-left: 5px;
 }
 
 .greyBG {

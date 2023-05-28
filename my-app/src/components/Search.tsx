@@ -1,24 +1,51 @@
 import s from '../styles/Search.module.css'
-import {useState} from "react";
+import {Dispatch, FC, SetStateAction, useState} from "react";
+import {NavLink} from "react-router-dom";
+import cross from '../img/cross-svgrepo-com.svg'
 
-const sections = ['лабораторный корпус', 'конгресс центр', 'главный корпус', 'музей истории электросвязи', 'дисит', 'библиотечный корпус', 'улк(учебно-лабораторный корпус)']
+const sections = [
+  'Лабораторный корпус',
+  'Конгресс центр',
+  'Главный корпус',
+  'Музей истории электросвязи',
+  'Дисит',
+  'Библиотечный корпус',
+  'УЛК'
+]
 
-const Search = () => {
-  const [value, setValue] = useState('');
+const Search: FC<IProps> = ({visible, setVisible}) => {
+  const [value, setValue] = useState('')
+
+  const mouseClick = (e: any) => {
+    if (e.target === e.currentTarget) {
+      setVisible(!visible)
+    }
+  }
+
   return (
-    <div className={s.wrapper}>
-      <input className={s.input} type={'text'} placeholder={'Поиск...'} onChange={(e) => setValue(e.target.value.toLowerCase())}/>
-      <ul className={s.ul}>
-        {
-          sections.filter(section => section.match(new RegExp(value, "i"))).map(section => {
-            return <li className={s.li} key={section}>
-              {section}
-            </li>
-          })
-        }
-      </ul>
-    </div>
+    <>
+      {visible ? <div className={s.wrapper} onClick={(e) => mouseClick(e)}>
+        <input className={s.input} type={'text'} placeholder={'Поиск...'} onChange={(e) => setValue(e.target.value.toLowerCase())}/>
+        <ul className={s.ul}>
+          {
+            sections.filter(section => section.match(new RegExp(value, "i"))).map(section => {
+              return <li className={s.li} key={section}>
+                <NavLink to={`/about/${section}`}  onClick={() => setVisible(!visible)}>
+                  {section}
+                </NavLink>
+              </li>
+            })
+          }
+        </ul>
+      </div>
+        : null}
+    </>
   );
 };
+
+interface IProps {
+  visible: boolean;
+  setVisible: Dispatch<SetStateAction<boolean>>;
+}
 
 export default Search;
